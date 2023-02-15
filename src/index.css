@@ -1,13 +1,114 @@
+* {
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+
+  color: #fff;
+  background-color: #30303c;
+  text-align: center;
+
+  width: 100%;
+  max-width: 1250px;
+  min-height: 100vh;
+  padding: 40px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*
+  Form
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+form h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+form .options {
+  width: 100%;
+  min-height: 70px;
+  display: grid;
+  place-content: center;
+  grid-template-columns: minmax(150px, 500px) minmax(100px, 400px);
+  gap: 20px;
+}
+form .options * {
+  box-sizing: border-box;
+}
+form input {
+  color: #fff;
+  max-width: 700px;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  background-color: #14151b;
+}
+form input:focus {
+  border: 1px solid rgb(86, 86, 255);
+}
+form select {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+/*
+  Cards
+*/
+ol {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style-type: none;
+}
+li {
+  width: 100%;
+  height: 100%;
+  background-color: #14151b;
+  border-radius: 7px;
+}
+li .content {
+  position: relative;
+  text-align: start;
+  padding: 8px;
+}
+li img {
+  aspect-ratio: 16/8;
+  object-fit: fill;
+  width: 100%;
+  height: 200px;
+}
+li span.price strong {
+  font-size: 24px;
+}
+@media (max-width: 1200px) {
+  ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  li img {
+    object-fit: fill;
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  ol {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  body {
+    padding: 10px;
+  }
 }
